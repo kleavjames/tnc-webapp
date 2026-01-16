@@ -22,15 +22,15 @@ const data = {
   navMain: [
     {
       title: "General",
-      url: "#",
+      url: "/",
       items: [
         {
           title: "Dashboard",
-          url: "#",
+          url: "/",
         },
         {
           title: "Users",
-          url: "#",
+          url: "/users",
         },
         {
           title: "Leaders",
@@ -58,7 +58,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           versions={data.versions}
           defaultVersion={data.versions[0]}
         />
-        <SearchForm />
+        {/* <SearchForm /> */}
       </SidebarHeader>
       </SidebarHeader>
       <SidebarContent>
