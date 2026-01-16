@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-providers";
 import { AuthProvider } from "@/providers/auth-providers";
+import { ConvexClientProvider } from "@/providers/convex-providers";
 
 export const metadata: Metadata = {
   title: "TNC WebApp",
@@ -16,16 +17,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <AuthProvider>
-              {children}
-            </AuthProvider>
-          </ThemeProvider>
+        <ConvexClientProvider>
+          <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <AuthProvider>
+                {children}
+              </AuthProvider>
+            </ThemeProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   );
