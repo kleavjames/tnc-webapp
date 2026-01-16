@@ -8,13 +8,17 @@
  * @module
  */
 
+import type * as schemas_users from "../schemas/users.js";
+
 import type {
   ApiFromModules,
   FilterApi,
   FunctionReference,
 } from "convex/server";
 
-declare const fullApi: ApiFromModules<{}>;
+declare const fullApi: ApiFromModules<{
+  "schemas/users": typeof schemas_users;
+}>;
 
 /**
  * A utility for referencing Convex functions in your app's public API.
