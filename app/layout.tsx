@@ -5,8 +5,8 @@ import { AuthProvider } from "@/providers/auth-providers";
 import { ConvexClientProvider } from "@/providers/convex-providers";
 
 export const metadata: Metadata = {
-  title: "TNC WebApp",
-  description: "TNC WebApp",
+  title: "TNC Monitoring System",
+  description: "TNC Monitoring System",
 };
 
 export default function RootLayout({

@@ -1,3 +1,5 @@
+'use client'
+
 import { AppSidebar } from "@/components/app-sidebar"
 import {
   Breadcrumb,
@@ -13,8 +15,20 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { useAuth } from "@/hooks/use-auth"
+import { redirect } from "next/navigation"
 
-const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const { user, isLoading } = useAuth()
+
+  if (isLoading) {
+    return null
+  }
+
+  if (!user) {
+    redirect("/login")
+  }
+
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -44,5 +58,3 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     </SidebarProvider>
   )
 }
-
-export default DashboardLayout;
