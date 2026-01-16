@@ -18,7 +18,7 @@ export const createUser = mutation({
   args: {
     firstName: v.string(),
     lastName: v.optional(v.string()),
-    mobileNumber: v.string(),
+    mobileNumber: v.optional(v.string()),
     gender: v.union(v.literal("male"), v.literal("female")),
     isALeader: v.optional(v.boolean()),
   },
@@ -26,6 +26,7 @@ export const createUser = mutation({
     return await ctx.db.insert("users", {
       ...args,
       lastName: args.lastName ?? "",
+      mobileNumber: args.mobileNumber ?? "",
       isALeader: args.isALeader ?? false,
     });
   },
