@@ -14,7 +14,6 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { SearchForm } from "./sidebar-search-form"
 import { VersionSwitcher } from "./version-switcher"
 
 const data = {

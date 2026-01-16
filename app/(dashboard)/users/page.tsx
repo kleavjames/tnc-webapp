@@ -1,18 +1,32 @@
-import { Header } from "@/components/header";
+"use client"
 
-export default async function UsersPage() {
+import { Header } from "@/components/header";
+import { DataTable } from "./data-table";
+import { columns } from "./columns";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
+
+export default function UsersPage() {
+  const users = useQuery(api.users.listUsers);
+
+  // Handle loading state
+  if (users === undefined) {
     return (
       <>
+        <Header title="Users" />
+        <div className="container mx-auto py-10">
+          <p>Loading...</p>
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
       <Header title="Users" />
       <div className="flex flex-1 flex-col gap-4 p-4">
-            <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-              <div className="bg-muted/50 aspect-video rounded-xl" />
-              <div className="bg-muted/50 aspect-video rounded-xl" />
-              <div className="bg-muted/50 aspect-video rounded-xl" />
-            </div>
-            <div className="bg-muted/50 min-h-screen flex-1 rounded-xl md:min-h-min" />
-          </div>
-          </>
-    )
-  }
-  
+      <DataTable columns={columns} data={users} />
+    </div>
+    </>
+  );
+}
