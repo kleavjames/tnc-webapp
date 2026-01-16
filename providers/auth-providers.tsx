@@ -8,8 +8,13 @@ const AuthContext = createContext<{
 } | undefined>(undefined)
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<any>(null)
-  const [isLoading, setIsLoading] = useState(true)
+  // FIXME: Implement auth provider
+  const [user, setUser] = useState<any>({
+    id: "1",
+    name: "John Doe",
+    email: "john.doe@example.com",
+  })
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     // TODO: Implement auth provider
