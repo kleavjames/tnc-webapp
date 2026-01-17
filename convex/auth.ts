@@ -49,7 +49,7 @@ export const login = mutation({
       expiresAt,
     });
 
-    return { token, username: account.username };
+    return { token, id: account._id, username: account.username };
   },
 });
 

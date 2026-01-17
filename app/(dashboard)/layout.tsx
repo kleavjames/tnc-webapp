@@ -11,8 +11,13 @@ import { redirect } from "next/navigation"
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { user, isLoading } = useAuth()
 
-  // Only redirect if we're done loading and there's no user
-  if (!isLoading && !user) {
+  // Wait for hydration to complete
+  if (isLoading) {
+    return null
+  }
+
+  // Redirect if not authenticated
+  if (!user) {
     redirect("/login")
   }
 
