@@ -1,6 +1,25 @@
+'use client'
+
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { LoginForm } from "@/components/login-form"
+import { useAuth } from "@/hooks/use-auth"
 
 export default function Page() {
+  const router = useRouter()
+  const { user, isLoading } = useAuth()
+
+  // Redirect to dashboard if already logged in
+  useEffect(() => {
+    if (!isLoading && user) {
+      router.replace("/")
+    }
+  }, [user, isLoading, router])
+
+  // Wait for hydration or if user exists (redirecting)
+  if (isLoading || user) {
+    return null
+  }
 
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
