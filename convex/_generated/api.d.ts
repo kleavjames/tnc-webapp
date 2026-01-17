@@ -9,6 +9,7 @@
  */
 
 import type * as auth from "../auth.js";
+import type * as crons from "../crons.js";
 import type * as schemas_accounts from "../schemas/accounts.js";
 import type * as schemas_users from "../schemas/users.js";
 import type * as users from "../users.js";
@@ -21,6 +22,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   auth: typeof auth;
+  crons: typeof crons;
   "schemas/accounts": typeof schemas_accounts;
   "schemas/users": typeof schemas_users;
   users: typeof users;

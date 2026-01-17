@@ -1,4 +1,4 @@
-import { query, mutation } from "./_generated/server";
+import { query, mutation, internalMutation } from "./_generated/server";
 import { v } from "convex/values";
 import bcrypt from "bcryptjs";
 
@@ -144,5 +144,25 @@ export const seedAdmin = mutation({
     });
 
     return { message: "Successfully created administrator account" };
+  },
+});
+
+// Internal mutation for scheduled cleanup - runs weekly via cron
+export const cleanupExpiredSessions = internalMutation({
+  args: {},
+  handler: async (ctx) => {
+    const now = Date.now();
+    const sessions = await ctx.db.query("sessions").collect();
+
+    let deletedCount = 0;
+    for (const session of sessions) {
+      if (session.expiresAt < now) {
+        await ctx.db.delete(session._id);
+        deletedCount++;
+      }
+    }
+
+    console.log(`Cleaned up ${deletedCount} expired sessions`);
+    return { deletedCount };
   },
 });

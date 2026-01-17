@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useState, useCallback, useMemo } from "react"
+import { createContext, useState, useCallback, useMemo, useEffect } from "react"
 import { useMutation, useQuery } from "convex/react"
 import { api } from "@/convex/_generated/api"
 
@@ -21,13 +21,15 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [token, setToken] = useState<string | null>(() => {
-    // Lazy initialization - runs only on initial render (client-side)
-    if (typeof window !== "undefined") {
-      return localStorage.getItem(SESSION_KEY)
-    }
-    return null
-  })
+  const [token, setToken] = useState<string | null>(null)
+  const [hasHydrated, setHasHydrated] = useState(false)
+
+  // Load token from localStorage after hydration
+  useEffect(() => {
+    const storedToken = localStorage.getItem(SESSION_KEY)
+    setToken(storedToken)
+    setHasHydrated(true)
+  }, [])
 
   const loginMutation = useMutation(api.auth.login)
   const logoutMutation = useMutation(api.auth.logout)
@@ -60,8 +62,8 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, [logoutMutation])
 
-  // Show loading while validating session (token exists but no response yet)
-  const isLoading = token !== null && sessionData === undefined
+  // Loading if: not hydrated yet OR (has token but waiting for session validation)
+  const isLoading = !hasHydrated || (token !== null && sessionData === undefined)
 
   // Memoize context value to prevent unnecessary re-renders in consumers
   const contextValue = useMemo<AuthContextType>(() => ({
