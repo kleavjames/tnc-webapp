@@ -1,7 +1,6 @@
 'use client'
 
 import { AppSidebar } from "@/components/app-sidebar"
-
 import {
   SidebarInset,
   SidebarProvider,
@@ -12,10 +11,12 @@ import { redirect } from "next/navigation"
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { user, isLoading } = useAuth()
 
+  // Wait for hydration to complete
   if (isLoading) {
     return null
   }
 
+  // Redirect if not authenticated
   if (!user) {
     redirect("/login")
   }

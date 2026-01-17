@@ -1,10 +1,12 @@
 'use client'
 
 import * as React from "react"
+import { LogOut } from "lucide-react"
 
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -15,9 +17,10 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { VersionSwitcher } from "./version-switcher"
+import { useAuth } from "@/hooks/use-auth"
 
 const data = {
-  versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
+  versions: ["1.0.0"],
   navMain: [
     {
       title: "General",
@@ -49,6 +52,8 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { logout } = useAuth()
+
   return (
     <Sidebar {...props}>
       <SidebarHeader>
@@ -79,6 +84,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarGroup>
         ))}
       </SidebarContent>
+      <SidebarFooter>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton onClick={logout}>
+              <LogOut className="size-4" />
+              Logout
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )

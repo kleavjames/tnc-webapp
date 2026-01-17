@@ -44,7 +44,7 @@ export default function UsersPage() {
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Users who are part in the church
+            These are the total church members
           </div>
           <div className="text-muted-foreground text-xs">
             {latestTimes?.all

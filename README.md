@@ -16,6 +16,8 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+> **⚠️ Important:** Before using the app, you must create an initial admin account. Edit the `seedAdmin` mutation in `convex/auth.ts` to set your desired username and password, then run the seed command. This is the only supported way to create the first user since registration is disabled.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
