@@ -34,10 +34,10 @@ const data = {
           title: "Users",
           url: "/users",
         },
-        // {
-        //   title: "Leaders",
-        //   url: "#",
-        // },
+        {
+          title: "GLC Lessons",
+          url: "/books",
+        },
         // {
         //   title: "Events",
         //   url: "#",

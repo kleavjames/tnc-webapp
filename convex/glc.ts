@@ -39,8 +39,6 @@ export const createGlc = mutation({
     level: v.number(),
     book: v.number(),
     bookTitle: v.string(),
-    session: v.number(),
-    sessionTitle: v.string(),
   },
   handler: async (ctx, args) => {
     const now = Date.now();
@@ -58,8 +56,6 @@ export const updateGlc = mutation({
     level: v.optional(v.number()),
     book: v.optional(v.number()),
     bookTitle: v.optional(v.string()),
-    session: v.optional(v.number()),
-    sessionTitle: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     const { glcId, ...updates } = args;

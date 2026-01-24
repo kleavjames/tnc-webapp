@@ -5,8 +5,6 @@ export const glcTable = defineTable({
   level: v.number(),
   book: v.number(),
   bookTitle: v.string(),
-  session: v.number(),
-  sessionTitle: v.string(),
   createdAt: v.number(),
   updatedAt: v.number(),
 })

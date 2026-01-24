@@ -34,72 +34,72 @@ export default function UsersPage() {
     <>
       <Header title="Users" />
       <div className="flex flex-1 flex-col gap-4 p-4">
-      <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-      <Card>
-        <CardHeader>
-          <CardDescription>Total Users</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            {users?.length ?? 0}
-          </CardTitle>
-        </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            These are the total church members
-          </div>
-          <div className="text-muted-foreground text-xs">
-            {latestTimes?.all
-              ? "Last updated " + formatDistanceToNow(latestTimes.all, { addSuffix: true })
-              : "No updates yet"}
-          </div>
-        </CardFooter>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardDescription>Total Female Users</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            {femaleUsers.length}
-          </CardTitle>
-        </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            Users who are female
-          </div>
-          <div className="text-muted-foreground text-xs">
-            {latestTimes?.female
-              ? "Last updated " + formatDistanceToNow(latestTimes.female, { addSuffix: true })
-              : "No updates yet"}
-          </div>
-        </CardFooter>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardDescription>Total Male Users</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            {maleUsers.length}
-          </CardTitle>
-        </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            Users who are male
-          </div>
-          <div className="text-muted-foreground text-xs">
-            {latestTimes?.male
-              ? "Last updated " + formatDistanceToNow(latestTimes.male, { addSuffix: true })
-              : "No updates yet"}
-          </div>
-        </CardFooter>
-      </Card>
+        <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+        <Card>
+          <CardHeader>
+            <CardDescription>Total Users</CardDescription>
+            <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+              {users?.length ?? 0}
+            </CardTitle>
+          </CardHeader>
+          <CardFooter className="flex-col items-start gap-1.5 text-sm">
+            <div className="line-clamp-1 flex gap-2 font-medium">
+              These are the total church members
+            </div>
+            <div className="text-muted-foreground text-xs">
+              {latestTimes?.all
+                ? "Last updated " + formatDistanceToNow(latestTimes.all, { addSuffix: true })
+                : "No updates yet"}
+            </div>
+          </CardFooter>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardDescription>Total Female Users</CardDescription>
+            <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+              {femaleUsers.length}
+            </CardTitle>
+          </CardHeader>
+          <CardFooter className="flex-col items-start gap-1.5 text-sm">
+            <div className="line-clamp-1 flex gap-2 font-medium">
+              Users who are female
+            </div>
+            <div className="text-muted-foreground text-xs">
+              {latestTimes?.female
+                ? "Last updated " + formatDistanceToNow(latestTimes.female, { addSuffix: true })
+                : "No updates yet"}
+            </div>
+          </CardFooter>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardDescription>Total Male Users</CardDescription>
+            <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+              {maleUsers.length}
+            </CardTitle>
+          </CardHeader>
+          <CardFooter className="flex-col items-start gap-1.5 text-sm">
+            <div className="line-clamp-1 flex gap-2 font-medium">
+              Users who are male
+            </div>
+            <div className="text-muted-foreground text-xs">
+              {latestTimes?.male
+                ? "Last updated " + formatDistanceToNow(latestTimes.male, { addSuffix: true })
+                : "No updates yet"}
+            </div>
+          </CardFooter>
+        </Card>
+        </div>
+        <div className="flex justify-end">
+        <Button variant="outline" asChild>
+          <Link href="/users/add">
+            <UserRoundPlus className="size-4" />
+            Add User
+          </Link>
+        </Button>
+        </div>
+        <DataTable columns={columns} data={users} />
       </div>
-      <div className="flex justify-end">
-      <Button variant="outline" asChild>
-        <Link href="/users/add">
-          <UserRoundPlus className="size-4" />
-          Add User
-        </Link>
-      </Button>
-      </div>
-      <DataTable columns={columns} data={users} />
-    </div>
     </>
   );
 }
