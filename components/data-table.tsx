@@ -22,12 +22,14 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
   pageSize?: number
+  fullWidth?: boolean
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
   pageSize = 5,
+  fullWidth = false,
 }: DataTableProps<TData, TValue>) {
   const table = useReactTable({
     data,
@@ -42,7 +44,7 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div>
+    <div className={fullWidth ? "w-full" : "w-[50%]"}>
       <div className="overflow-hidden rounded-lg border">
         <Table>
           <TableHeader>
