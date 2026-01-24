@@ -34,18 +34,18 @@ const data = {
           title: "Users",
           url: "/users",
         },
-        {
-          title: "Leaders",
-          url: "#",
-        },
-        {
-          title: "Events",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
+        // {
+        //   title: "Leaders",
+        //   url: "#",
+        // },
+        // {
+        //   title: "Events",
+        //   url: "#",
+        // },
+        // {
+        //   title: "Settings",
+        //   url: "#",
+        // },
       ],
     }
   ],
