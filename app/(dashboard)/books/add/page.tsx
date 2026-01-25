@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
 import { Header } from "@/components/header";
 import {
   Card,
@@ -26,7 +24,6 @@ import {
 
 export default function AddGlcPage() {
   const router = useRouter();
-  const createGlc = useMutation(api.glc.createGlc);
 
   const [level, setLevel] = useState<number>(1);
   const [book, setBook] = useState<number | null>(1);
@@ -50,11 +47,11 @@ export default function AddGlcPage() {
 
     try {
       setIsSubmitting(true);
-      await createGlc({
-        level,
-        book,
-        bookTitle: bookTitle.trim(),
-      });
+      // await createGlc({
+      //   level,
+      //   book,
+      //   bookTitle: bookTitle.trim(),
+      // });
       router.push("/books");
     } catch (err) {
       setError("Failed to create GLC entry. Please try again.");

@@ -1,0 +1,445 @@
+{
+    [
+        {
+            "level": 1,
+            "book": [
+                {
+                    "id": "book_1",
+                    "bookNumber": 1,
+                    "bookTitle": "Ony By One",
+                    "sessions": [
+                        {
+                            "id": "session_1_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "One Truth",
+                            "sessionSubtitle": "The Gospel",
+                        },
+                        {
+                            "id": "session_1_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "One Way",
+                            "sessionSubtitle": "The Savior",
+                        },
+                        {
+                            "id": "session_1_3",
+                            "sessionNumber": 3,
+                            "sessionTitle": "One Proof",
+                            "sessionSubtitle": "Our New Life in Christ",
+                        },
+                        {
+                            "id": "session_1_4",
+                            "sessionNumber": 4,
+                            "sessionTitle": "One Promise",
+                            "sessionSubtitle": "The Assurance of Salvation",
+                        },
+                        {
+                            "id": "session_1_5",
+                            "sessionNumber": 5,
+                            "sessionTitle": "One Pursuit",
+                            "sessionSubtitle": "Living Victoriously in Christ",
+                        }
+                    ]
+                },
+                {
+                    "id": "book_2",
+                    "bookNumber": 2,
+                    "bookTitle": "Spiritual Disciplines",
+                    "sessions": [
+                        {
+                            "id": "session_2_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "One Connection",
+                            "sessionSubtitle": "Prayer and Fasting",
+                        },
+                        {
+                            "id": "session_2_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "One Basis",
+                            "sessionSubtitle": "The Bible",
+                        },
+                        {
+                            "id": "session_2_3",
+                            "sessionNumber": 3,
+                            "sessionTitle": "One Family",
+                            "sessionSubtitle": "The Church",
+                        },
+                        {
+                            "id": "session_2_4",
+                            "sessionNumber": 4,
+                            "sessionTitle": "One Blessing",
+                            "sessionSubtitle": "Generous Giving",
+                        },
+                        {
+                            "id": "session_2_5",
+                            "sessionNumber": 5,
+                            "sessionTitle": "One Task",
+                            "sessionSubtitle": "Witnessing",
+                        }
+                    ]
+                },
+                {
+                    "id": "book_3",
+                    "bookNumber": 3,
+                    "bookTitle": "The Holy Spirit",
+                    "sessions": [
+                        {
+                            "id": "session_3_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "The Person and works of the Holy Spirit",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_3_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "The Gifts of the Holy Spirit",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_3_3",
+                            "sessionNumber": 3,
+                            "sessionTitle": "Walking in the Spirit",
+                            "sessionSubtitle": "",
+                        }
+                    ]
+                },
+                {
+                    "id": "book_4",
+                    "bookNumber": 4,
+                    "bookTitle": "CCF DNA",
+                    "sessions": [
+                        {
+                            "id": "session_4_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "Mission, Vision, Strategy",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_4_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "Core Values",
+                            "sessionSubtitle": "",
+                        },
+                    ]
+                },
+            ],
+        },
+        {
+            "level": 2,
+            "book": [
+                {
+                    "id": "book_5",
+                    "bookNumber": 5,
+                    "bookTitle": "DGroup 101",
+                    "sessions": [
+                        {
+                            "id": "session_5_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "Biblical Foundations of Small Group Ministry",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_5_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "Life-on-Life Discipleship",
+                            "sessionSubtitle": "Roles of a Dgroup Leader",
+                        },
+                        {
+                            "id": "session_5_3",
+                            "sessionNumber": 3,
+                            "sessionTitle": "The Process of Discipleship",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_5_4",
+                            "sessionNumber": 4,
+                            "sessionTitle": "Handling Issues in Dgroups",
+                            "sessionSubtitle": "",
+                        },
+                    ]
+                },
+                {
+                    "id": "book_6",
+                    "bookNumber": 6,
+                    "bookTitle": "Basic Doctrines",
+                    "sessions": [
+                        {
+                            "id": "session_6_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "God's Word, The Bible",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_6_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "God's Person and Nature",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_6_3",
+                            "sessionNumber": 3,
+                            "sessionTitle": "Jesus: His Person and Works",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_6_4",
+                            "sessionNumber": 4,
+                            "sessionTitle": "Salvation",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_6_5",
+                            "sessionNumber": 5,
+                            "sessionTitle": "The Trinity",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_6_6",
+                            "sessionNumber": 6,
+                            "sessionTitle": "Marriage Gender",
+                            "sessionSubtitle": "",
+                        }
+                    ]
+                },
+                {
+                    "id": "book_7",
+                    "bookNumber": 7,
+                    "bookTitle": "Family Life",
+                    "sessions": [
+                        {
+                            "id": "session_7_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "God's Design for the Family",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_7_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "Roles of Husband and Wife",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_7_3",
+                            "sessionNumber": 3,
+                            "sessionTitle": "Roles of Children and Single Adults",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_7_4",
+                            "sessionNumber": 4,
+                            "sessionTitle": "Communication and Restoring Relationships",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_7_5",
+                            "sessionNumber": 5,
+                            "sessionTitle": "Roles of Parents",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_7_6",
+                            "sessionNumber": 6,
+                            "sessionTitle": "How to Influence Your Children",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_7_7",
+                            "sessionNumber": 7,
+                            "sessionTitle": "What to Teach Your Children (Part 1)",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_7_8",
+                            "sessionNumber": 8,
+                            "sessionTitle": "What to Teach Your Children (Part 2)",
+                            "sessionSubtitle": "",
+                        },
+                    ]
+                },
+                {
+                    "id": "book_8",
+                    "bookNumber": 8,
+                    "bookTitle": "Survey of the Bible",
+                    "sessions": [
+                        {
+                            "id": "session_8_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "The Importance of the Bible",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_8_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "The Pentateuch",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_8_3",
+                            "sessionNumber": 3,
+                            "sessionTitle": "The Historical Books 1: The Rise to the Monarchy",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_8_4",
+                            "sessionNumber": 4,
+                            "sessionTitle": "The Historical Books 2: The Fall of the Monarchy",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_8_5",
+                            "sessionNumber": 5,
+                            "sessionTitle": "Wisdom Literature & Poetry",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_8_6",
+                            "sessionNumber": 6,
+                            "sessionTitle": "Major Prophets",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_8_7",
+                            "sessionNumber": 7,
+                            "sessionTitle": "Minor Prophets",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_8_8",
+                            "sessionNumber": 8,
+                            "sessionTitle": "The New Testament Gospels",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_8_9",
+                            "sessionNumber": 9,
+                            "sessionTitle": "The Acts of the Apostles",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_8_10",
+                            "sessionNumber": 10,
+                            "sessionTitle": "The Pauline Epistles",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_8_11",
+                            "sessionNumber": 11,
+                            "sessionTitle": "The General Epistles",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_8_12",
+                            "sessionNumber": 12,
+                            "sessionTitle": "Revelation",
+                            "sessionSubtitle": "",
+                        },
+                    ]
+                }
+            ]
+        },
+        {
+            "level": 3,
+            "book": [
+                {
+                    "id": "book_9",
+                    "bookNumber": 9,
+                    "bookTitle": "The Multiplier",
+                    "sessions": [
+                        {
+                            "id": "session_9_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "Discipleship Essentials for Multiplication",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_9_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "Having a Clear Vision",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_9_3",
+                            "sessionNumber": 3,
+                            "sessionTitle": "Characteristics of a Small Group Leader",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_9_4",
+                            "sessionNumber": 4,
+                            "sessionTitle": "Four Core Leadership Area of Discipleship",
+                            "sessionSubtitle": "",
+                        },
+                    ]
+                },
+                {
+                    "id": "book_10",
+                    "bookNumber": 10,
+                    "bookTitle": "Reliability of the Bible",
+                    "sessions": [
+                        {
+                            "id": "session_10_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "The Bible is Trustworthy (Part 1)",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_10_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "The Bible is Trustworthy (Part 2)",
+                            "sessionSubtitle": "",
+                        },
+                    ]
+                },
+                {
+                    "id": "book_11",
+                    "bookNumber": 11,
+                    "bookTitle": "Spiritual Warfare",
+                    "sessions": [
+                        {
+                            "id": "session_11_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "The Realities of Spiritual Warfare",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_11_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "Overcoming Strongholds",
+                            "sessionSubtitle": "",
+                        },
+                    ]
+                },
+                {
+                    "id": "book_12",
+                    "bookNumber": 12,
+                    "bookTitle": "Leadership Skills",
+                    "sessions": [
+                        {
+                            "id": "session_12_1",
+                            "sessionNumber": 1,
+                            "sessionTitle": "Mentoring Leaders",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_12_2",
+                            "sessionNumber": 2,
+                            "sessionTitle": "Coaching",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_12_3",
+                            "sessionNumber": 3,
+                            "sessionTitle": "Biblical Counseling",
+                            "sessionSubtitle": "",
+                        },
+                        {
+                            "id": "session_12_4",
+                            "sessionNumber": 4,
+                            "sessionTitle": "Conflict Resolution",
+                            "sessionSubtitle": "",
+                        },
+                    ]
+                },
+            ]
+        }
+    ]
+}

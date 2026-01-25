@@ -6,17 +6,15 @@ import { Button } from "@/components/ui/button";
 import { BookPlus } from "lucide-react";
 import Link from "next/link";
 import { columns } from "./columns";
-import { useQuery } from "convex/react";
-import { api } from "@/convex/_generated/api";
 
 export default function BooksPage() {
-  const glc = useQuery(api.glc.listGlc)
+  // const glc = useQuery(api.glc.listGlc)
 
   return (
     <>
         <Header title="GLC Lessons" />
         <div className="flex flex-1 flex-col gap-4 p-4">
-          <div className="flex justify-end">
+          <div className="flex justify-start">
           <Button variant="outline" asChild>
             <Link href="/books/add">
               <BookPlus className="size-4" />
@@ -24,7 +22,7 @@ export default function BooksPage() {
             </Link>
           </Button> 
           </div>
-          <DataTable columns={columns} data={glc ?? []}   />
+          <DataTable columns={columns} data={[]}   />
         </div>
     </>
   );
