@@ -1,0 +1,129 @@
+{
+    "level": 1,
+    "book": [
+        {
+            "id": "book_1",
+            "bookNumber": 1,
+            "bookTitle": "Ony By One",
+            "sessions": [
+                {
+                    "id": "session_1_1",
+                    "sessionNumber": 1,
+                    "sessionTitle": "One Truth",
+                    "sessionSubtitle": "The Gospel"
+                },
+                {
+                    "id": "session_1_2",
+                    "sessionNumber": 2,
+                    "sessionTitle": "One Way",
+                    "sessionSubtitle": "The Savior"
+                },
+                {
+                    "id": "session_1_3",
+                    "sessionNumber": 3,
+                    "sessionTitle": "One Proof",
+                    "sessionSubtitle": "Our New Life in Christ"
+                },
+                {
+                    "id": "session_1_4",
+                    "sessionNumber": 4,
+                    "sessionTitle": "One Promise",
+                    "sessionSubtitle": "The Assurance of Salvation"
+                },
+                {
+                    "id": "session_1_5",
+                    "sessionNumber": 5,
+                    "sessionTitle": "One Source",
+                    "sessionSubtitle": "The Holy Spirit"
+                },
+                {
+                    "id": "session_1_6",
+                    "sessionNumber": 6,
+                    "sessionTitle": "One Pursuit",
+                    "sessionSubtitle": "Living Victoriously in Christ"
+                }
+            ]
+        },
+        {
+            "id": "book_2",
+            "bookNumber": 2,
+            "bookTitle": "Spiritual Disciplines",
+            "sessions": [
+                {
+                    "id": "session_2_1",
+                    "sessionNumber": 1,
+                    "sessionTitle": "One Connection",
+                    "sessionSubtitle": "Prayer and Fasting"
+                },
+                {
+                    "id": "session_2_2",
+                    "sessionNumber": 2,
+                    "sessionTitle": "One Basis",
+                    "sessionSubtitle": "The Bible"
+                },
+                {
+                    "id": "session_2_3",
+                    "sessionNumber": 3,
+                    "sessionTitle": "One Family",
+                    "sessionSubtitle": "The Church"
+                },
+                {
+                    "id": "session_2_4",
+                    "sessionNumber": 4,
+                    "sessionTitle": "One Blessing",
+                    "sessionSubtitle": "Generous Giving"
+                },
+                {
+                    "id": "session_2_5",
+                    "sessionNumber": 5,
+                    "sessionTitle": "One Task",
+                    "sessionSubtitle": "Witnessing"
+                }
+            ]
+        },
+        {
+            "id": "book_3",
+            "bookNumber": 3,
+            "bookTitle": "The Holy Spirit",
+            "sessions": [
+                {
+                    "id": "session_3_1",
+                    "sessionNumber": 1,
+                    "sessionTitle": "The Person and works of the Holy Spirit",
+                    "sessionSubtitle": ""
+                },
+                {
+                    "id": "session_3_2",
+                    "sessionNumber": 2,
+                    "sessionTitle": "The Gifts of the Holy Spirit",
+                    "sessionSubtitle": ""
+                },
+                {
+                    "id": "session_3_3",
+                    "sessionNumber": 3,
+                    "sessionTitle": "Walking in the Spirit",
+                    "sessionSubtitle": ""
+                }
+            ]
+        },
+        {
+            "id": "book_4",
+            "bookNumber": 4,
+            "bookTitle": "CCF DNA",
+            "sessions": [
+                {
+                    "id": "session_4_1",
+                    "sessionNumber": 1,
+                    "sessionTitle": "Mission, Vision, Strategy",
+                    "sessionSubtitle": ""
+                },
+                {
+                    "id": "session_4_2",
+                    "sessionNumber": 2,
+                    "sessionTitle": "Core Values",
+                    "sessionSubtitle": ""
+                }
+            ]
+        }
+    ]
+}

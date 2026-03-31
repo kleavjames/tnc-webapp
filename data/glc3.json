@@ -1,0 +1,105 @@
+{
+    "level": 3,
+    "book": [
+        {
+            "id": "book_9",
+            "bookNumber": 9,
+            "bookTitle": "The Multiplier",
+            "sessions": [
+                {
+                    "id": "session_9_1",
+                    "sessionNumber": 1,
+                    "sessionTitle": "Discipleship Essentials for Multiplication",
+                    "sessionSubtitle": ""
+                },
+                {
+                    "id": "session_9_2",
+                    "sessionNumber": 2,
+                    "sessionTitle": "Having a Clear Vision",
+                    "sessionSubtitle": ""
+                },
+                {
+                    "id": "session_9_3",
+                    "sessionNumber": 3,
+                    "sessionTitle": "Characteristics of a Small Group Leader",
+                    "sessionSubtitle": ""
+                },
+                {
+                    "id": "session_9_4",
+                    "sessionNumber": 4,
+                    "sessionTitle": "Four Core Leadership Area of Discipleship",
+                    "sessionSubtitle": ""
+                }
+            ]
+        },
+        {
+            "id": "book_10",
+            "bookNumber": 10,
+            "bookTitle": "Reliability of the Bible",
+            "sessions": [
+                {
+                    "id": "session_10_1",
+                    "sessionNumber": 1,
+                    "sessionTitle": "The Bible is Trustworthy (Part 1)",
+                    "sessionSubtitle": ""
+                },
+                {
+                    "id": "session_10_2",
+                    "sessionNumber": 2,
+                    "sessionTitle": "The Bible is Trustworthy (Part 2)",
+                    "sessionSubtitle": ""
+                }
+            ]
+        },
+        {
+            "id": "book_11",
+            "bookNumber": 11,
+            "bookTitle": "Spiritual Warfare",
+            "sessions": [
+                {
+                    "id": "session_11_1",
+                    "sessionNumber": 1,
+                    "sessionTitle": "The Realities of Spiritual Warfare",
+                    "sessionSubtitle": ""
+                },
+                {
+                    "id": "session_11_2",
+                    "sessionNumber": 2,
+                    "sessionTitle": "Overcoming Strongholds",
+                    "sessionSubtitle": ""
+                }
+            ]
+        },
+        {
+            "id": "book_12",
+            "bookNumber": 12,
+            "bookTitle": "Leadership Skills",
+            "sessions": [
+                {
+                    "id": "session_12_1",
+                    "sessionNumber": 1,
+                    "sessionTitle": "Mentoring Leaders",
+                    "sessionSubtitle": ""
+                },
+                {
+                    "id": "session_12_2",
+                    "sessionNumber": 2,
+                    "sessionTitle": "Coaching",
+                    "sessionSubtitle": ""
+                },
+                {
+                    "id": "session_12_3",
+                    "sessionNumber": 3,
+                    "sessionTitle": "Biblical Counseling",
+                    "sessionSubtitle": ""
+                },
+                {
+                    "id": "session_12_4",
+                    "sessionNumber": 4,
+                    "sessionTitle": "Conflict Resolution",
+                    "sessionSubtitle": ""
+                }
+            ]
+        }
+    ]
+}

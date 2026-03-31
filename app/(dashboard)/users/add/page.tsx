@@ -14,17 +14,36 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { Field, FieldDescription, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { NumberInput } from "@/components/ui/number-input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  MultiSelect,
+  MultiSelectContent,
+  MultiSelectItem,
+  MultiSelectTrigger,
+  MultiSelectValue,
+} from "@/components/ui/multi-select";
+import { leadershipRoles } from "@/data/constants";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function AddUserPage() {
   const router = useRouter();
   const createUser = useMutation(api.users.createUser);
 
   const [firstName, setFirstName] = useState("");
+  const [middleName, setMiddleName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
+  const [mobileNumber, setMobileNumber] = useState<number | null>(null);
   const [gender, setGender] = useState<"male" | "female">("male");
-  const [isALeader, setIsALeader] = useState(false);
+  const [leaderRoles, setLeaderRoles] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -39,13 +58,13 @@ export default function AddUserPage() {
 
     try {
       setIsSubmitting(true);
-      await createUser({
-        firstName: firstName.trim(),
-        lastName: lastName.trim() || undefined,
-        mobileNumber: mobileNumber.trim() || undefined,
-        gender,
-        isALeader,
-      });
+      // await createUser({
+      //   firstName: firstName.trim(),
+      //   lastName: lastName.trim() || undefined,
+      //   mobileNumber: mobileNumber || undefined,
+      //   gender,
+      //   leaderRoles,
+      // });
       router.push("/users");
     } catch (err) {
       setError("Failed to create user. Please try again.");
@@ -59,15 +78,16 @@ export default function AddUserPage() {
     <>
       <Header title="Add User" />
       <div className="flex flex-1 flex-col gap-4 p-4">
-        <Card className="max-w-xl">
-          <CardHeader>
-            <CardTitle>New User</CardTitle>
+      <form onSubmit={handleSubmit}>
+
+        <Card className="w-full">
+        <CardHeader className="pb-4">
+            <CardTitle>Basic Information</CardTitle>
             <CardDescription>
-              Fill in the details below to add a new user.
+              Fill in the details below to add a new user to the system. 
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit}>
               <FieldGroup>
                 {error && (
                   <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive">
@@ -75,6 +95,7 @@ export default function AddUserPage() {
                   </div>
                 )}
 
+                <div className="flex gap-4">
                 <Field>
                   <FieldLabel htmlFor="firstName">
                     First Name <span className="text-destructive">*</span>
@@ -90,24 +111,39 @@ export default function AddUserPage() {
                 </Field>
 
                 <Field>
-                  <FieldLabel htmlFor="lastName">Last Name</FieldLabel>
+                  <FieldLabel htmlFor="middleName">Middle Name</FieldLabel>
+                  <Input
+                    id="middleName"
+                    type="text"
+                    placeholder="Enter middle name"
+                    value={middleName}
+                    onChange={(e) => setMiddleName(e.target.value)}
+                  />
+                </Field>
+
+                <Field>
+                  <FieldLabel htmlFor="lastName">
+                    Last Name <span className="text-destructive">*</span>
+                    </FieldLabel>
                   <Input
                     id="lastName"
                     type="text"
                     placeholder="Enter last name"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
+                    required
                   />
                 </Field>
+                </div>
 
+                <div className="flex gap-4">
                 <Field>
                   <FieldLabel htmlFor="mobileNumber">Mobile Number</FieldLabel>
-                  <Input
+                  <NumberInput
                     id="mobileNumber"
-                    type="tel"
                     placeholder="Enter mobile number"
                     value={mobileNumber}
-                    onChange={(e) => setMobileNumber(e.target.value)}
+                    onChange={setMobileNumber}
                   />
                 </Field>
 
@@ -115,45 +151,108 @@ export default function AddUserPage() {
                   <FieldLabel htmlFor="gender">
                     Gender <span className="text-destructive">*</span>
                   </FieldLabel>
-                  <div className="flex gap-4">
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="gender"
-                        value="male"
-                        checked={gender === "male"}
-                        onChange={() => setGender("male")}
-                        className="size-4 accent-primary"
-                      />
-                      <span className="text-sm">Male</span>
-                    </label>
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="gender"
-                        value="female"
-                        checked={gender === "female"}
-                        onChange={() => setGender("female")}
-                        className="size-4 accent-primary"
-                      />
-                      <span className="text-sm">Female</span>
-                    </label>
+                  <Select
+                    value={gender}
+                    onValueChange={(value) => setGender(value as "male" | "female")}
+                  >
+                    <SelectTrigger id="gender">
+                      <SelectValue placeholder="Select gender" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="male">Male</SelectItem>
+                      <SelectItem value="female">Female</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </Field>
+
+                <Field>
+                  <FieldLabel htmlFor="leaderRoles">Leadership Roles</FieldLabel>
+                  <MultiSelect
+                    values={leaderRoles}
+                    onValuesChange={setLeaderRoles}
+                  >
+                    <MultiSelectTrigger id="leaderRoles" className="max-w-xs">
+                      <MultiSelectValue placeholder="Select leader roles" overflowBehavior="wrap" />
+                    </MultiSelectTrigger>
+                    <MultiSelectContent>
+                      {leadershipRoles.map(roles => (
+                        <MultiSelectItem key={roles.value} value={roles.value}>
+                          {roles.name}
+                        </MultiSelectItem>
+                      ))}
+                    </MultiSelectContent>
+                  </MultiSelect>
+                  <FieldDescription>Defaults to a member if no roles selected</FieldDescription>
+                </Field>
+                </div>
+              </FieldGroup>
+          </CardContent>
+          <CardHeader className="pb-4">
+            <CardTitle>GLC Information</CardTitle>
+            <CardDescription>
+              Your record on your leadership journey.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+              <Tabs>
+                <TabsList className="w-full">
+                  <TabsTrigger value="glc1">GLC 1</TabsTrigger>
+                  <TabsTrigger value="glc2">GLC 2</TabsTrigger>
+                  <TabsTrigger value="glc3">GLC 3</TabsTrigger>
+                </TabsList>
+              <FieldGroup>
+                {error && (
+                  <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive">
+                    {error}
                   </div>
+                )}
+
+                <TabsContent value="glc1" className="py-4">
+                <div className="flex gap-4">
+                <Field>
+                  <FieldLabel htmlFor="firstName">
+                    First Name <span className="text-destructive">*</span>
+                  </FieldLabel>
+                  <Input
+                    id="firstName"
+                    type="text"
+                    placeholder="Enter first name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                  />
                 </Field>
 
-                <Field orientation="horizontal">
-                  <label className="flex items-center gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={isALeader}
-                      onChange={(e) => setIsALeader(e.target.checked)}
-                      className="size-4 accent-primary rounded"
-                    />
-                    <span className="text-sm font-medium">Is a Leader</span>
-                  </label>
+                <Field>
+                  <FieldLabel htmlFor="middleName">Middle Name</FieldLabel>
+                  <Input
+                    id="middleName"
+                    type="text"
+                    placeholder="Enter middle name"
+                    value={middleName}
+                    onChange={(e) => setMiddleName(e.target.value)}
+                  />
                 </Field>
 
-                <div className="flex gap-3 pt-4">
+                <Field>
+                  <FieldLabel htmlFor="lastName">
+                    Last Name <span className="text-destructive">*</span>
+                    </FieldLabel>
+                  <Input
+                    id="lastName"
+                    type="text"
+                    placeholder="Enter last name"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    required
+                  />
+                </Field>
+                </div>
+                </TabsContent>
+              </FieldGroup>
+              </Tabs>
+
+              <div className="flex gap-3 pt-4">
                   <Button
                     type="button"
                     variant="outline"
@@ -166,10 +265,10 @@ export default function AddUserPage() {
                     {isSubmitting ? "Creating..." : "Create User"}
                   </Button>
                 </div>
-              </FieldGroup>
-            </form>
+
           </CardContent>
         </Card>
+        </form>
       </div>
     </>
   );

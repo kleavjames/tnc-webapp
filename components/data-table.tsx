@@ -29,7 +29,7 @@ export function DataTable<TData, TValue>({
   columns,
   data,
   pageSize = 5,
-  fullWidth = false,
+  fullWidth = true,
 }: DataTableProps<TData, TValue>) {
   const table = useReactTable({
     data,
